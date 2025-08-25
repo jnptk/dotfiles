@@ -1,0 +1,11 @@
+# vi:ft=conf
+#
+# This is Git's per-user configuration file.
+#
+
+[user]
+	name = jnptk
+	email = 110389276+jnptk@users.noreply.github.com
+
+[init]
+	defaultBranch = main

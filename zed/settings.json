@@ -1,0 +1,84 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette
+{
+  "icon_theme": "Zed (Default)",
+  "cursor_shape": "block",
+  "ui_font_size": 18,
+  "buffer_font_size": 18.0,
+  "buffer_font_features": {
+    "calt": false
+  },
+  "soft_wrap": "preferred_line_length",
+  "theme": {
+    "mode": "system",
+    "light": "Zedokai Light (Filter Sun)",
+    "dark": "Zedokai Darker (Filter Spectrum)"
+  },
+
+  "file_types": {
+    "XML": ["*.zcml", "*.pt"],
+    "SCSS": ["*.overrides", "*.variables", "*.less"]
+  },
+
+  "languages": {
+    "Python": {
+      "language_servers": ["ruff", "pyrefly", "mypy", "!pylsp", "!pyright"]
+    },
+    "Markdown": {
+      "soft_wrap": "editor_width"
+    },
+    "reST": {
+      "language_servers": ["!esbonio"] // 'reST' tried to load this server
+    }
+  },
+
+  "lsp": {
+    "pyright": {
+      "settings": {
+        "python": {
+          "pythonPath": ".venv/bin/python" //"backend/bin/python"
+        }
+      }
+    }
+  },
+
+  "minimap": {
+    "show": "always"
+  },
+
+  "terminal": {
+    "button": false
+  },
+
+  "toolbar": {
+    "quick_actions": false
+  },
+
+  "collaboration_panel": {
+    "button": false
+  },
+
+  "notification_panel": {
+    "button": false
+  },
+
+  "tab_bar": {
+    "show": false
+  },
+
+  "show_edit_predictions": false,
+
+  "agent": {
+    // "button": false,
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    }
+  }
+}

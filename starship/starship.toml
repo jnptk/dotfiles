@@ -1,0 +1,52 @@
+'$schema' = "https://starship.rs/config-schema.json"
+
+add_newline = true
+
+format = """
+$git_branch\
+$directory\
+$character"""
+
+right_format = "$python$nodejs"
+
+[character]
+success_symbol = "[\\$](bold white)"
+error_symbol = "[\\$](bold red)"
+
+[directory]
+format = "[\\[$path\\]]($style)"
+style = ""
+
+# python
+[python]
+format = "py $version"
+detect_files = [
+    '.python-version',
+    '__init__.py',
+    'pyproject.toml',
+    'requirements.txt',
+    'setup.py',
+    'tox.ini',
+]
+
+# node
+[nodejs]
+format = "node $version"
+
+# git
+[git_branch]
+format = "[\\[$branch\\]]($style)"
+symbol = ""
+style = "#9f5658"
+
+[git_commit]
+disabled = true
+
+[git_state]
+disabled = true
+
+[git_metrics]
+disabled = true
+
+[git_status]
+disabled = true

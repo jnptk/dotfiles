@@ -1,0 +1,22 @@
+# vi:ft=conf
+#
+# https://ghostty.org/docs/config/reference
+#
+
+auto-update-channel = tip
+window-decoration = true
+window-theme = "dark"
+window-save-state = always
+window-padding-balance = true
+theme = solarized-dark
+shell-integration = none
+cursor-style = block
+cursor-style-blink = true
+mouse-hide-while-typing = true
+clipboard-read = "allow"
+clipboard-paste-protection = false
+
+font-size = 18
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
