@@ -19,6 +19,9 @@ link "$PWD"/fish/config.fish ~/.config/fish/config.fish
 # terms
 link "$PWD"/ghostty ~/.config/ghostty
 
+# ssh
+link "$PWD"/ssh/allowed_signers ~/.ssh/allowed_signers
+
 # editor
 link "$PWD"/nvim ~/.config/nvim
 link "$PWD"/zed/settings.json ~/.config/zed/settings.json
