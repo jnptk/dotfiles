@@ -30,6 +30,8 @@ link "$PWD"/git/config ~/.config/git/config
 link "$PWD"/git/gitignore ~/.config/git/ignore
 link "$PWD"/bat/config ~/.config/bat/config
 link "$PWD"/BeatPrints/config.toml ~/.config/BeatPrints/config.toml
+link "$PWD"/lsd/config.yml ~/.config/lsd/config.yml
+link "$PWD"/lsd/colors.yml ~/.config/lsd/colors.yml
 
 if [[ $OSTYPE == 'darwin'* ]]; then
    brew bundle --file=$PWD/Brewfile

@@ -10,6 +10,11 @@ status is-interactive; and begin
     alias gs 'git status'
     alias fishconfig 'nvim $XDG_CONFIG_HOME/fish/config.fish'
 
+    alias ls 'lsd'
+    alias la 'lsd -a'
+    alias ll 'lsd -l'
+    alias lt 'lsd --tree'
+
     # disable fish greeting
     set fish_greeting
     fish_config theme choose 'Solarized Dark'
