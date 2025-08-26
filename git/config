@@ -3,9 +3,16 @@
 # This is Git's per-user configuration file.
 #
 
+[commit]
+	gpgSign = true
+
+[gpg]
+	format = "ssh"
+
 [user]
 	name = jnptk
 	email = 110389276+jnptk@users.noreply.github.com
+	signingKey = "~/.ssh/id_ed25519"
 
 [init]
 	defaultBranch = main
