@@ -1,0 +1,14 @@
+#!/bin/sh
+set -euo pipefail
+
+if ! git diff --quiet -- Brewfile; then
+    # force update Brewfile
+    brew bundle dump --force --file=Brewfile
+
+    # remove vscode and mas lines
+    sed -i '' '/^vscode/d;/^mas/d' Brewfile
+
+    # create separate commit
+    git add Brewfile
+    git commit -m "🍺 update Brewfile" -- Brewfile
+fi

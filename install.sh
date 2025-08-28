@@ -38,6 +38,9 @@ link "$PWD"/lsd/colors.yml ~/.config/lsd/colors.yml
 
 if [[ $OSTYPE == 'darwin'* ]]; then
    brew bundle --file=$PWD/Brewfile
+
+   # custom git hook for this repo
+   cp "$PWD"/git/hooks/post-commit .git/hooks
 fi
 
 # setup fish
