@@ -8,6 +8,7 @@
 // command palette
 {
   "icon_theme": "Zed (Default)",
+  "vim_mode": true,
   "cursor_shape": "block",
   "ui_font_size": 18,
   "buffer_font_size": 18.0,
@@ -35,16 +36,6 @@
     },
     "reST": {
       "language_servers": ["!esbonio"] // 'reST' tried to load this server
-    }
-  },
-
-  "lsp": {
-    "pyright": {
-      "settings": {
-        "python": {
-          "pythonPath": ".venv/bin/python" //"backend/bin/python"
-        }
-      }
     }
   },
 
