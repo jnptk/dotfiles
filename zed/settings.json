@@ -59,8 +59,8 @@
     "button": false
   },
 
-  "tab_bar": {
-    "show": false
+  "debugger": {
+    "button": false
   },
 
   "show_edit_predictions": false,
