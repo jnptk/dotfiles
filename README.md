@@ -7,7 +7,7 @@ Welcome to the secret lair of my dotfiles. Here lies the configuration magic tha
 Clone this repo:
 
 ```bash
-git clone git@github.com:jnptk/dotfiles.git
+git clone --shallow-submodules git@github.com:jnptk/dotfiles.git
 ```
 
 Run the installer:
