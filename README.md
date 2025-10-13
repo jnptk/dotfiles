@@ -16,8 +16,4 @@ Run the installer:
 ./install.sh
 ```
 
-Restart the terminal or source the shell:
-
-```bash
-source ~/.blabla
-```
+Restart your terminal and enjoy!
