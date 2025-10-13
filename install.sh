@@ -15,7 +15,7 @@ link() {
 # shell
 link "$PWD"/zsh/.zshrc ~/.config/zsh/.zshrc
 link "$PWD"/zsh/.zshenv ~/.config/zsh/.zshenv
-link "$PWD"/zsh/zsh-completions/zsh-completions.zsh ~/.config/zsh/zsh-completions/zsh-completions.zsh
+link "$PWD"/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 link "$PWD"/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 link "$PWD"/zsh/pure ~/.config/zsh/pure
 
