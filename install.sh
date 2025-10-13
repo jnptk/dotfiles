@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -euo pipefail
 
 link() {
@@ -13,8 +13,11 @@ link() {
 }
 
 # shell
-link "$PWD"/fish/functions ~/.config/fish/functions
-link "$PWD"/fish/config.fish ~/.config/fish/config.fish
+link "$PWD"/zsh/.zshrc ~/.config/zsh/.zshrc
+link "$PWD"/zsh/.zshenv ~/.config/zsh/.zshenv
+link "$PWD"/zsh/zsh-completions/zsh-completions.zsh ~/.config/zsh/zsh-completions/zsh-completions.zsh
+link "$PWD"/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+link "$PWD"/zsh/pure ~/.config/zsh/pure
 
 # terms
 link "$PWD"/ghostty ~/.config/ghostty
@@ -28,29 +31,32 @@ link "$PWD"/zed/settings.json ~/.config/zed/settings.json
 link "$PWD"/zed/keymap.json ~/.config/zed/keymap.json
 
 # other
-link "$PWD"/starship/starship.toml ~/.config/starship.toml
 link "$PWD"/git/config ~/.config/git/config
 link "$PWD"/git/gitignore ~/.config/git/ignore
 link "$PWD"/bat/config ~/.config/bat/config
-link "$PWD"/BeatPrints/config.toml ~/.config/BeatPrints/config.toml
-link "$PWD"/lsd/config.yml ~/.config/lsd/config.yml
-link "$PWD"/lsd/colors.yml ~/.config/lsd/colors.yml
 
+# set var according to os
 if [[ $OSTYPE == 'darwin'* ]]; then
-   brew bundle --file=$PWD/Brewfile
-
-   # custom git hook for this repo
-   cp "$PWD"/git/hooks/post-commit .git/hooks
+   ZSHENV_FILE="/etc/zshenv"
+else
+   ZSHENV_FILE="/etc/zsh/zshenv"
 fi
 
-# setup fish
-if ! grep -q fish /etc/shells; then
-    echo "Adding $(which fish) to /etc/shells - will ask for root password"
-    which fish | sudo tee -a /etc/shells
+# create zshenv file if not exists
+if [ ! -f "$ZSHENV_FILE" ]; then
+    echo "Creating $ZSHENV_FILE..."
+	sudo touch "$ZSHENV_FILE"
+else
+    echo "$ZSHENV_FILE already exists"
 fi
-if [ $SHELL != $(which fish) ]; then
-    echo "Setting $(which fish) as the default shell - will ask user password"
-    chsh -s $(which fish)
+
+# add export ... if not already in file
+if ! grep -q "^export ZDOTDIR=" "$ZSHENV_FILE"; then
+    echo "Adding ZDOTDIR to $ZSHENV_FILE"
+    echo "export ZDOTDIR=\"$HOME/.config/zsh\"" | sudo tee -a "$ZSHENV_FILE" >/dev/null
+else
+    echo "ZDOTDIR already set"
 fi
+
 
 echo "[✔] Bootstrap complete. Restart your shell!"
