@@ -4,10 +4,10 @@ Welcome to the secret lair of my dotfiles. Here lies the configuration magic tha
 
 #### 🛠 Installation
 
-Clone this repo:
+Clone this repo (and it's submodules):
 
 ```bash
-git clone --shallow-submodules git@github.com:jnptk/dotfiles.git
+git clone --recurse-submodules --shallow-submodules git@github.com:jnptk/dotfiles.git
 ```
 
 Run the installer:
